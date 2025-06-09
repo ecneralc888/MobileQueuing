@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_layout_advising"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+
+    <!-- ======================
+         1) HEADER (Yellow area)
+         ====================== -->
+    <LinearLayout
+        android:id="@+id/header_container_advising"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFEB3B"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Row: STI Logo (left) + Location/Region (right of logo) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- STI LOGO -->
+            <ImageView
+                android:id="@+id/iv_sti_logo_advising"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:contentDescription="@string/sti_logo"
+                android:src="@drawable/sti_logo" />
+
+            <!-- Small gap between logo & text -->
+            <View
+                android:layout_width="8dp"
+                android:layout_height="match_parent" />
+
+            <!-- Vertical stack: "BALAGTAS, BULACAN" / "REGION III" -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_location_advising"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BALAGTAS, BULACAN"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_region_advising"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="REGION III"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Centered “ADVISING” title -->
+        <TextView
+            android:id="@+id/tv_department_advising"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center_horizontal"
+            android:text="ADVISING"
+            android:textColor="#000000"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+    <!-- =======================================
+         2) CONTENT AREA (White background)
+         ======================================= -->
+    <LinearLayout
+        android:id="@+id/content_container_advising"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="top|center_horizontal"
+        android:padding="16dp">
+
+        <!-- "Now Queueing: D035" (centered) -->
+        <TextView
+            android:id="@+id/tv_now_queueing_advising"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Now Queueing: D035"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp" />
+
+        <!-- “For Advising” description below the queueing text -->
+        <TextView
+            android:id="@+id/tv_description_advising"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="For Advising"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:layout_marginTop="12dp" />
+
+        <!-- “Get Ticket Number” button -->
+        <Button
+            android:id="@+id/btn_get_ticket_advising"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/rounded_button"
+            android:paddingVertical="12dp"
+            android:text="Get Ticket Number"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+
+    <!-- ==============================
+         3) BOTTOM NAVIGATION (Icons)
+         ============================== -->
+    <LinearLayout
+        android:id="@+id/bottom_nav_advising"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="24dp"
+        android:gravity="center_vertical"
+        android:background="#FFFFFF">
+
+        <!-- ── Home Icon: Yellow circle + white house glyph ── -->
+        <ImageButton
+            android:id="@+id/btnAdvisingHome"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/circle_yellow"
+            android:src="@drawable/home"
+            android:contentDescription="@string/nav_home"
+            android:padding="8dp"
+            android:scaleType="centerInside" />
+
+        <!-- Spacer pushes the Profile icon to the right -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <!-- ── Profile Icon: Blue circle + white user glyph ── -->
+        <ImageButton
+            android:id="@+id/nav_list"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/circle_yellow"
+            android:src="@drawable/list"
+            android:contentDescription="@string/nav_profile"
+            android:padding="8dp"
+            android:scaleType="centerInside" />
+    </LinearLayout>
+</LinearLayout>

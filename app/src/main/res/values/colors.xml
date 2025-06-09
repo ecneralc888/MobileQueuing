@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ================================
+         1) NEUTRALS
+         ================================ -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="gray_light">#FFEEEEEE</color>
+    <color name="gray_medium">#FF888888</color>
+    <color name="gray_dark">#FF333333</color>
+
+    <!-- ================================
+         2) PRIMARY THEME COLORS
+         ================================ -->
+    <!-- Original naming: “primary”, “primary_variant”, etc. -->
+    <color name="primary">#FF6200EE</color>        <!-- Purple  -->
+    <color name="primary_variant">#FF3700B3</color>
+    <color name="secondary">#FF03DAC6</color>      <!-- Teal    -->
+    <color name="secondary_variant">#FF018786</color>
+
+    <!-- Android‐style attributes (so you can refer to them in styles.xml) -->
+    <color name="colorPrimary">#FF6200EE</color>      <!-- same as “primary” -->
+    <color name="colorPrimaryVariant">#FF3700B3</color>
+    <color name="colorAccent">#FFFFC107</color>       <!-- Amber / warning -->
+    <color name="colorError">#FFF44336</color>        <!-- Red / error -->
+    <color name="colorOnPrimary">#FFFFFFFF</color>    <!-- Text/icon on primary -->
+    <color name="colorOnError">#FFFFFFFF</color>      <!-- Text/icon on error -->
+
+    <!-- ================================
+         3) STATUS COLORS
+         ================================ -->
+    <color name="success">#FF4CAF50</color>
+    <color name="warning">#FFFFC107</color>
+    <color name="error_status">#FFF44336</color> <!-- Already matches colorError above -->
+
+    <!-- ================================
+         4) ACCENT / VIBE COLORS
+         ================================ -->
+    <color name="sky_blue">#FF87CEEB</color>
+    <color name="soft_pink">#FFFFC0CB</color>
+    <color name="sun_yellow">#FFFFEB3B</color>
+    <color name="coral">#FFFF6F61</color>
+    <color name="mint">#FF98FF98</color>
+    <color name="lavender">#FFE6E6FA</color>
+
+    <!-- ================================
+         5) TRANSPARENT / FROSTED COLORS
+         ================================ -->
+    <color name="transparent">#00000000</color> <!-- Fully transparent -->
+    <color name="frost_white">#80FFFFFF</color>  <!-- 50% white -->
+    <color name="frost_black">#80000000</color>  <!-- 50% black -->
+    <color name="frost_purple">#806200EE</color> <!-- 50% primary purple -->
+    <color name="frost_gray">#80EEEEEE</color>   <!-- 50% light gray -->
+
+    <!-- ================================
+         6) ADDITIONAL COLORS FOR OUR LAYOUTS
+         ================================ -->
+    <!-- Very light background behind cards, etc. -->
+    <color name="queue_bg_light">#FFF9F9FE</color>
+
+    <!-- Light gray line or divider between sections -->
+    <color name="queue_card_border">#FFE0E0E0</color>
+
+    <!-- Secondary/Hint text color (lighter gray) -->
+    <color name="queue_text_secondary">#FF666666</color>
+
+
+
+</resources>

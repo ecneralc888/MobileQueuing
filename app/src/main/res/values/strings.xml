@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ================================
+         1) APP-WIDE NAMES & ARRAY
+         ================================ -->
+    <string name="app_name">Queueing System With Enrollment</string>
+    <string name="queueing_system_with_enrollment">YourAppName</string>
+
+    <string-array name="departments_array">
+        <item>Cashier</item>
+        <item>Accounting</item>
+        <item>Registrar</item>
+        <item>Advising</item>
+    </string-array>
+
+
+    <!-- ================================
+         2) HOMEPAGE / QUEUEING SCREEN
+         ================================ -->
+    <!-- Header / Toolbar -->
+    <string name="sti_logo">STI Logo</string>
+    <string name="queueing_title">Queueing</string>
+    <string name="select_department">Select Department</string>
+    <string name="sti_balagtas">STI Balagtas</string>
+
+    <!-- “You are number” card -->
+    <string name="you_are_number_label">You are number:</string>
+    <string name="est_wait_time">Est. wait time: %1$s</string>
+    <!-- Use in code: getString(R.string.est_wait_time, "12 minutes") -->
+
+    <!-- “Queue List” card -->
+    <string name="queue_list_label">Queue List</string>
+    <string name="in_service">In service</string>
+    <string name="you_label">YOU</string>
+
+    <!-- Action buttons -->
+    <string name="notify_me">Notify Me</string>
+    <string name="leave_queue">Leave Queue</string>
+
+    <!-- Footer -->
+    <string name="footer_text">STI College 2025</string>
+
+    <!-- Bottom navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_profile">Profile</string>
+
+
+    <!-- ================================
+         3) LOGIN SCREEN (MainActivity)
+         ================================ -->
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Password</string>
+    <string name="login_button">Login</string>
+    <string name="forgot_password">Forgot Password?</string>
+
+
+    <!-- ================================
+         4) DEPARTMENT-SPECIFIC SCREENS
+         ================================ -->
+    <string name="department_accounting">ACCOUNTING</string>
+    <string name="department_cashier">CASHIER</string>
+    <string name="department_registrar">REGISTRAR</string>
+    <string name="department_advising">ADVISING</string>
+
+    <!-- Format for “Now Queueing: A035” -->
+    <string name="now_queueing_format">Now Queueing: %1$s</string>
+    <!-- Use in code: getString(R.string.now_queueing_format, "A035") -->
+
+    <!-- “For ___” descriptions -->
+    <string name="for_accounting">For Accounting</string>
+    <string name="for_cashier">For Cashier</string>
+    <string name="for_registrar">For Registrar</string>
+    <string name="for_advising">For Advising</string>
+
+
+    <!-- ================================
+         5) ENROLLMENT SCREEN (EnrollmentActivity)
+         ================================ -->
+    <!-- Toolbar title -->
+    <string name="enrollment_ticket">Enrollment Ticket</string>
+
+    <!-- Back navigation contentDescription -->
+    <string name="back">Back</string>
+
+    <!-- QR code contentDescription -->
+    <string name="qr_code_desc">QR Code to scan</string>
+
+    <!-- “Ticket Code” label inside card -->
+    <string name="ticket_code_label">TICKET CODE</string>
+
+    <!-- Hint below QR image -->
+    <string name="qr_hint">Scan this QR at the counter</string>
+
+    <!-- Assigned Services & Status header -->
+    <string name="assigned_services_header">Assigned Services &amp; Status</string>
+
+    <!-- Individual service names (for contentDescription) -->
+    <string name="cashier_service">Cashier Service</string>
+    <string name="accounting_service">Accounting Service</string>
+    <string name="advising_service">Advising Service</string>
+    <string name="assessment_service">Assessment Service</string>
+    <string name="guidance_service">Guidance Service</string>
+
+    <!-- “Cancel” and “Next” button labels -->
+    <string name="cancel">Cancel</string>
+    <string name="next">Next</string>
+
+    <!-- Status key label/description at bottom -->
+    <string name="status_key_label">Status Key</string>
+    <string name="status_key_info">
+        Your queue is now active. You will receive a notification once Cashier is ready for you.
+    </string>
+
+
+    <!-- ================================
+         6) NOTIFICATIONS SCREEN (NotificationActivity)
+         ================================ -->
+    <!-- Title shown in the top AppBar -->
+    <string name="queue_notifications_title">Queue Notifications</string>
+
+    <!-- “Enable notifications” instructional message -->
+    <!-- NOTE: apostrophe escaped as \’ -->
+    <string name="enable_notifications_message">
+        Enable notifications to get alerts when it\'s your turn.
+    </string>
+
+    <!-- “Notification History” section header -->
+    <string name="notification_history">Notification History</string>
+
+    <!-- Placeholder text when there is no history yet -->
+    <string name="no_notification_history">You have no notifications yet.</string>
+
+    <!-- Bell icon contentDescription (if you want one) -->
+    <string name="notifications">Notifications</string>
+
+
+    <string name="my_profile">My Profile</string>
+    <string name="edit">Edit</string>
+    <string name="update_profile">Update Profile</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="profile_picture">Profile Picture</string>
+    <string name="edit_photo">Edit Photo</string>
+    <string name="student_id">Student ID</string>
+    <string name="email">Email</string>
+    <string name="phone">Phone</string>
+    <string name="address">Address</string>
+    <string name="active">Active</string>
+
+
+
+</resources>

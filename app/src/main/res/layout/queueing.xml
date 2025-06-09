@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_queueing"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+
+    <!-- ==============================
+         1) TOOLBAR / APP BAR
+         ============================== -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_queueing"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#FFFFFF"
+        android:elevation="4dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="16dp">
+
+        <!-- Back Arrow -->
+        <ImageButton
+            android:id="@+id/btn_back_queueing"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_arrow_back"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Back"
+            app:tint="#111827" />
+
+        <!-- Title centered -->
+        <TextView
+            android:id="@+id/tv_title_queueing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:text="Queueing"
+            android:textColor="#111827"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- Spacer pushes “STI BALAGTAS” to the right -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tv_campus_queueing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="STI BALAGTAS"
+            android:textColor="#6B7280"
+            android:textSize="14sp"
+            android:layout_gravity="center_vertical" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- ==============================
+         2) SELECT DEPARTMENT DROPDOWN
+         ============================== -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tv_select_dept"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Department"
+            android:textColor="#111827"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinner_dept"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:spinnerMode="dropdown"
+            android:background="@drawable/spinner_background"
+            android:padding="8dp"
+            android:popupBackground="#FFFFFF" />
+    </LinearLayout>
+
+    <!-- ==============================
+         3) “You are number” CARD
+         ============================== -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_my_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        android:background="#FFFFFF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tv_my_number_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="You are number:"
+                android:textColor="#6B7280"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_my_number_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="#A-0123"
+                android:textColor="#2563EB"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="4dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/iv_clock"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_clock"
+                    android:contentDescription="Clock"
+                    app:tint="#6B7280" />
+
+                <TextView
+                    android:id="@+id/tv_est_wait"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Est. wait time: 12 minutes"
+                    android:textColor="#6B7280"
+                    android:textSize="14sp"
+                    android:layout_marginStart="4dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- ==============================
+         4) QUEUE LIST CARD
+         ============================== -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_queue_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        android:background="#FFFFFF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tv_queue_list_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Queue List"
+                android:textColor="#111827"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E5E7EB"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Row: #A-0120 (In service) -->
+            <LinearLayout
+                android:id="@+id/row_item_0120"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingVertical="4dp">
+
+                <TextView
+                    android:id="@+id/tv_item_0120"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="#A-0120"
+                    android:textColor="#111827"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/iv_dot_in_service"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:background="@drawable/dot_green"
+                    android:contentDescription="In service" />
+
+                <TextView
+                    android:id="@+id/tv_status_0120"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="In service"
+                    android:textColor="#16A34A"
+                    android:textSize="14sp"
+                    android:layout_marginStart="4dp" />
+            </LinearLayout>
+
+            <!-- Row: #A-0121 -->
+            <TextView
+                android:id="@+id/tv_item_0121"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="#A-0121"
+                android:textColor="#111827"
+                android:textSize="14sp"
+                android:layout_marginTop="8dp" />
+
+            <!-- Row: #A-0123 (YOU) -->
+            <LinearLayout
+                android:id="@+id/row_item_0123"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="8dp"
+                android:background="#EFF6FF"
+                android:padding="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="-8dp"
+                android:layout_marginEnd="16dp"
+                android:foreground="?attr/selectableItemBackground">
+
+                <TextView
+                    android:id="@+id/tv_item_0123"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="#A-0123"
+                    android:textColor="#2563EB"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/iv_dot_you"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:background="@drawable/dot_gray"
+                    android:contentDescription="You" />
+
+                <TextView
+                    android:id="@+id/tv_label_you"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="YOU"
+                    android:textColor="#6B7280"
+                    android:textSize="14sp"
+                    android:layout_marginStart="4dp" />
+            </LinearLayout>
+
+            <!-- Row: #A-0124 -->
+            <TextView
+                android:id="@+id/tv_item_0124"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="#A-0124"
+                android:textColor="#111827"
+                android:textSize="14sp"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- ==============================
+         5) ACTION BUTTONS
+         ============================== -->
+    <LinearLayout
+        android:id="@+id/action_buttons_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/btn_notify_me"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/button_blue"
+            android:text="Notify Me"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:layout_marginBottom="12dp" />
+
+        <Button
+            android:id="@+id/btn_leave_queue"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/button_red"
+            android:text="Leave Queue"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <!-- ==============================
+         Spacer to push footer to the bottom
+         ============================== -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- ==============================
+         6) FOOTER
+         ============================== -->
+    <TextView
+        android:id="@+id/tv_footer_queueing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="STI College 2025"
+        android:textColor="#6B7280"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:layout_marginBottom="8dp" />
+
+</LinearLayout>

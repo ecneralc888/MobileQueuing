@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container_profile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_light">
+
+    <!-- ─────────────────────────────────────────────
+         1) Top AppBar with Back Arrow and Centered Title
+         ───────────────────────────────────────────── -->
+    <RelativeLayout
+        android:id="@+id/header_enrollment"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        android:elevation="4dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <!-- Back Arrow ImageButton: pinned to the start (left) -->
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/backbutton"
+            android:contentDescription="@string/back"
+            android:padding="4dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="centerInside" />
+
+        <!-- “My Profile” title: centered in the parent -->
+        <TextView
+            android:id="@+id/tv_header_title_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/my_profile"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <!-- ─────────────────────────────────────────────
+         2) Scrollable Content (below the AppBar)
+         ───────────────────────────────────────────── -->
+    <ScrollView
+        android:id="@+id/scroll_profile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:fillViewport="true"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:id="@+id/content_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="24dp">
+
+            <!-- ─────────────────────────────────────────────
+                 2.1) Profile Card: Photo, Name, Degree, Status Chip
+                 ───────────────────────────────────────────── -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_profile_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardUseCompatPadding="true"
+                android:background="@color/white">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="24dp">
+
+                    <!-- Profile Picture (centered) -->
+                    <ImageView
+                        android:id="@+id/iv_profile_picture"
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/profile"
+                        android:scaleType="centerCrop"
+                        android:background="@drawable/profile_circle_background"
+                        android:contentDescription="@string/profile_picture" />
+
+                    <!-- Edit Icon overlay (bottom‐right of picture) -->
+                    <ImageView
+                        android:id="@+id/iv_edit_profile_picture"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignBottom="@id/iv_profile_picture"
+                        android:layout_alignEnd="@id/iv_profile_picture"
+                        android:src="@drawable/edit"
+                        android:background="@drawable/edit_circle_background"
+                        android:padding="4dp"
+                        android:contentDescription="@string/edit_photo"
+                        app:tint="@color/white" />
+
+                    <!-- Name, Degree, Status Chip (below the image) -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/iv_profile_picture"
+                        android:layout_marginTop="16dp"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_profile_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Joshua Rivera"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_profile_degree"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="BS Computer Science"
+                            android:textColor="@color/gray_dark"
+                            android:textSize="14sp"
+                            android:layout_marginTop="4dp" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_status"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            app:chipBackgroundColor="@color/success"
+                            app:chipStrokeColor="@color/success"
+                            app:chipStrokeWidth="1dp"
+                            android:text="@string/active"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ─────────────────────────────────────────────
+                 2.2) Info Card: Student ID, Email, Phone, Address
+                 ───────────────────────────────────────────── -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_profile_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardUseCompatPadding="true"
+                android:background="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:divider="@drawable/divider_horizontal"
+                    android:showDividers="middle">
+
+                    <!-- Row: Student Number (no edit) -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/id"
+                            android:contentDescription="@string/student_id"
+                            app:tint="@color/primary" />
+
+                        <TextView
+                            android:id="@+id/tv_student_id"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="12dp"
+                            android:text="2022-106789"
+                            android:textColor="@color/gray_dark"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <!-- Row: Email (no edit) -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/email"
+                            android:contentDescription="@string/email"
+                            app:tint="@color/primary" />
+
+                        <TextView
+                            android:id="@+id/tv_email"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="12dp"
+                            android:text="joshua.rivera@sti.edu"
+                            android:textColor="@color/gray_dark"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <!-- Row: Phone + Edit -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/phone"
+                            android:contentDescription="@string/phone"
+                            app:tint="@color/primary" />
+
+                        <TextView
+                            android:id="@+id/tv_phone"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="12dp"
+                            android:text="+63 917 234 5678"
+                            android:textColor="@color/gray_dark"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_edit_phone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/edit"
+                            android:textColor="@color/primary"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <!-- Row: Address + Edit -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/location"
+                            android:contentDescription="@string/address"
+                            app:tint="@color/primary" />
+
+                        <TextView
+                            android:id="@+id/tv_address"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="12dp"
+                            android:text="Blk &amp; Lot 13, Greenview Subd., Manila"
+                            android:textColor="@color/gray_dark"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_edit_address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/edit"
+                            android:textColor="@color/primary"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ─────────────────────────────────────────────
+                 2.3) Action Buttons (Update Profile / Sign Out)
+                 ───────────────────────────────────────────── -->
+            <LinearLayout
+                android:id="@+id/buttons_profile_actions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginTop="16dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_update_profile"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="@string/update_profile"
+                    android:textAllCaps="false"
+                    app:backgroundTint="@color/primary"
+                    app:cornerRadius="24dp"
+                    android:textColor="@color/white" />
+
+                <!-- small gap -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_sign_out"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="@string/sign_out"
+                    android:textAllCaps="false"
+                    app:strokeColor="@color/primary"
+                    app:strokeWidth="1dp"
+                    app:cornerRadius="24dp"
+                    android:textColor="@color/primary" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
